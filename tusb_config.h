@@ -1,0 +1,26 @@
+#pragma once
+
+#define CFG_TUD_ENABLED (1)
+
+#define CFG_TUSB_RHPORT0_MODE (OPT_MODE_DEVICE | OPT_MODE_FULL_SPEED)
+#ifndef BOARD_TUD_RHPORT
+#define BOARD_TUD_RHPORT (0)
+#endif
+
+#define CFG_TUD_CDC (1)
+#define CFG_TUD_CDC_RX_BUFSIZE (0x40)
+#define CFG_TUD_CDC_TX_BUFSIZE (0x40)
+#define CFG_TUD_CDC_EP_BUFSIZE (0x40)
+#define CDC_0_IN_BUFFER_LENGTH (CFG_TUD_CDC_RX_BUFSIZE)
+
+#ifndef CFG_TUD_ENDPOINT0_SIZE
+#define CFG_TUD_ENDPOINT0_SIZE (64)
+#endif
+
+#define CFG_TUD_HID (1)
+#define CFG_TUD_HID_EP_BUFSIZE (16)
+
+#ifndef CFG_TUSB_MEM_ALIGN
+#define CFG_TUSB_MEM_ALIGN __attribute__ ((aligned(4)))
+#endif
+

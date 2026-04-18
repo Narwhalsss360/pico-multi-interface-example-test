@@ -22,5 +22,9 @@
 
 #ifndef CFG_TUSB_MEM_ALIGN
 #define CFG_TUSB_MEM_ALIGN __attribute__ ((aligned(4)))
+
+#define HID_REPORT_ID_KEYBOARD (1)
+#define HID_REPORT_ID_GAMEPAD (2)
+
 #endif
 

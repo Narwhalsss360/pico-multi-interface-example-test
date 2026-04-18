@@ -11,8 +11,7 @@
 #define THIS_PID (0x4000 | (CFG_TUD_HID << 1) | (CFG_TUD_CDC << 2))
 #define DEVICE_VERSOIN_BCD (0x0100)
 #define USB_VERSION_BCD (0x0200)
-#define HID_REPORT_ID_KEYBOARD (1)
-#define HID_REPORT_ID_GAMEPAD (2)
+#define HID_INTERFACE_POLLING_INTERVAL (2)
 
 const tusb_desc_device_t device_descriptor = {
     .bLength = sizeof(tusb_desc_device_t),
@@ -100,7 +99,7 @@ const uint8_t configuration_descriptor[] = {
         sizeof(hid_report_descriptor),
         ENDPOINT_NUMBER_HID,
         CFG_TUD_HID_EP_BUFSIZE,
-        5
+        HID_INTERFACE_POLLING_INTERVAL
     )
 };
 
